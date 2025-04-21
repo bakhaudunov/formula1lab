@@ -1,0 +1,8 @@
+rootProject.name = 'Formula1'
+include 'eureka-server'
+include 'driver-server'
+include 'driver-server'
+include 'team-service'
+include 'race-service'
+include 'api-gateway'
+
