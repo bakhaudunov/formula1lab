@@ -1,7 +1,6 @@
-rootProject.name = 'Formula1'
+rootProject.name = 'formula1-microservices'
 include 'eureka-server'
-include 'driver-server'
+include 'driver-service'
 include 'team-service'
 include 'race-service'
 include 'api-gateway'
-
