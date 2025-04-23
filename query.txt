@@ -1,0 +1,41 @@
+POST http://localhost:8080/api/teams
+Content-Type: application/json
+
+{
+    "name": "Red Bull Racing",
+    "country": "Austria"
+}
+
+
+POST http://localhost:8080/api/drivers
+Content-Type: application/json
+
+{
+    "name": "Max Verstappen",
+    "nationality": "Netherlands",
+    "age": 26,
+    "teamId": 1
+}
+
+POST http://localhost:8080/api/races
+Content-Type: application/json
+
+{
+    "location": "Monaco Grand Prix",
+    "date": "2025-05-25",
+    "results": [
+        {
+            "driverId": 1,
+            "position": 1
+        }
+    ]
+}
+
+
+GET http://localhost:8080/api/teams/1
+
+
+GET http://localhost:8080/api/races/1
+
+
+GET http://localhost:8080/api/races/winner
