@@ -74,5 +74,26 @@ services:
       race-service:
         condition: service_started
 
+
+  championship-service:
+    build: ./championship-service
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+    depends_on:
+      eureka-server:
+        condition: service_healthy
+      postgres:
+        condition: service_healthy
+
+  analytics-service:
+    build: ./analytics-service
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+    depends_on:
+      eureka-server:
+        condition: service_healthy
+      postgres:
+        condition: service_healthy
+
 volumes:
   postgres-data:
