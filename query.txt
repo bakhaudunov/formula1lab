@@ -71,28 +71,9 @@ http://localhost:8080/api/championships/1
 http://localhost:8080/api/championships/2023/standings
 
 
-Расчет очков и позиций в чемпионате
 
-POST http://localhost:8080/api/championships/1/calculate
-
-
-Запросы для Analytics Service
-
- Получение статистики гонщика по ID
-
-http://localhost:8080/api/analytics/drivers/1
-
-Получение статистики команды по ID
-
-GET http://localhost:8080/api/analytics/teams/1
-
-
-Получение рейтинга гонщиков
 
 GET http://localhost:8080/api/analytics/drivers/ranking
 
-Получение рейтинга команд
-
-Обновление всей статистики
 
 POST http://localhost:8080/api/analytics/refresh
