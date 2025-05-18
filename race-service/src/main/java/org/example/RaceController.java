@@ -49,6 +49,15 @@ public class RaceController {
         Race savedRace = raceRepository.save(race);
         return ResponseEntity.status(HttpStatus.CREATED).body(savedRace);
     }
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteRace(@PathVariable Long id) {
+        if (raceRepository.existsById(id)) {
+            raceRepository.deleteById(id);
+            return ResponseEntity.noContent().build(); // 204 No Content
+        } else {
+            return ResponseEntity.notFound().build(); // 404 Not Found
+        }
+    }
 
     @GetMapping("/winner")
     public ResponseEntity<RaceWinnerResponse> getLatestRaceWinner() {
