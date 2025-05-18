@@ -45,4 +45,13 @@ public class TeamController {
         Team savedTeam = teamRepository.save(team);
         return ResponseEntity.status(HttpStatus.CREATED).body(savedTeam);
     }
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteTeam(@PathVariable Long id) {
+        if (teamRepository.existsById(id)) {
+            teamRepository.deleteById(id);
+            return ResponseEntity.noContent().build(); // 204 No Content
+        } else {
+            return ResponseEntity.notFound().build(); // 404 Not Found
+        }
+    }
 }

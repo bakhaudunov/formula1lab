@@ -41,4 +41,13 @@ public class DriverController {
         Driver savedDriver = driverRepository.save(driver);
         return ResponseEntity.status(HttpStatus.CREATED).body(savedDriver);
     }
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteDriver(@PathVariable Long id) {
+        if (driverRepository.existsById(id)) {
+            driverRepository.deleteById(id);
+            return ResponseEntity.noContent().build(); // 204 No Content
+        } else {
+            return ResponseEntity.notFound().build(); // 404 Not Found
+        }
+    }
 }

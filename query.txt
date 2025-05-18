@@ -6,7 +6,7 @@ Content-Type: application/json
     "country": "ФЫВФЫВФЫ"
 }
 
-POST http://localhost:8080/api/drivers
+    POST http://localhost:8080/api/drivers
 Content-Type: application/json
 
 {

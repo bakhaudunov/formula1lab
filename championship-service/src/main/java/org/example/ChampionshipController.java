@@ -54,4 +54,13 @@ public class ChampionshipController {
                 .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());
     }
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteChampionship(@PathVariable Long id) {
+        if (championshipRepository.existsById(id)) {
+            championshipRepository.deleteById(id);
+            return ResponseEntity.noContent().build(); // 204 No Content
+        } else {
+            return ResponseEntity.notFound().build(); // 404 Not Found
+        }
+    }
 }
